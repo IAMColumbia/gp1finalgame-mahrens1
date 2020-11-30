@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class Dragon : Enemy
 {
 
-    private Button hitBox1;
-    public bool isClicked;
+    public Button hitBox1;
 
     private void Awake()
     {
         isDead = false;
-        hitBox1 = GetComponent<Button>();
-        health = 10;
+        hitBox1 = GetComponentInChildren<Button>();
+        health = 50;
     }
 
     private void Update()
@@ -27,5 +26,11 @@ public class Dragon : Enemy
     public void Hit()
     {
         health -= Player.Instance.weapon.damage;
+        ChangeHitboxLocation();
+    }
+
+    public override void ChangeHitboxLocation()
+    {
+        hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
     }
 }

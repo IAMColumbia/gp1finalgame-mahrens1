@@ -12,7 +12,7 @@ public class Bug : Enemy
     {
         isDead = false;
         hitBox1 = GetComponent<Button>();
-        health = 20;
+        health = 50;
     }
 
     private void Update()
@@ -26,5 +26,11 @@ public class Bug : Enemy
     public void Hit()
     {
         health -= Player.Instance.weapon.damage;
+        ChangeHitboxLocation();
+    }
+
+    public override void ChangeHitboxLocation()
+    {
+        hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
     }
 }

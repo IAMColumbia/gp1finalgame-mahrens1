@@ -11,10 +11,10 @@ public class Enemy : MonoBehaviour
     public void EnemyKilled()
     {
         isDead = true;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
-    public void ChangeHitboxLocation()
+    public virtual void ChangeHitboxLocation()
     {
 
     }

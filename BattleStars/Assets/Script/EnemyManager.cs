@@ -6,27 +6,27 @@ public class EnemyManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> enemyList;
     private Vector2 spawnLocation;
+    private GameObject enemy;
 
     private void Start()
     {
-        spawnLocation = new Vector2(0, 0);
-        enemyList = new List<GameObject>();
+        spawnLocation = new Vector2(500, 400);        
         LoadEnemy();
     }
 
     public void LoadEnemy()
     {
-        var enemy = enemyList[Random.Range(0, 3)];
+        enemy = enemyList[Random.Range(0, 3)];
+
         Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
     }
 
     private void Update()
     {
-        var enemy = GameObject.FindGameObjectWithTag("Enemy");
-
-        if(enemy.isDead == true)
+        /*if (enemy.activeInHierarchy == false)
         {
+            Destroy(enemy);
             LoadEnemy();
-        }
+        }*/
     }
 }

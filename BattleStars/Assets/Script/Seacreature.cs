@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class Seacreature : Enemy
 {
 
-    private Button hitBox1;
+    public Button hitBox1;
 
     private void Awake()
     {
         isDead = false;
-        hitBox1 = GetComponent<Button>();
+        hitBox1 = (Button)FindObjectOfType(typeof(Button));
         health = 30;
     }
 
@@ -26,5 +26,12 @@ public class Seacreature : Enemy
     public void Hit()
     {
         health -= Player.Instance.weapon.damage;
+        ChangeHitboxLocation();
     }
+
+    public override void ChangeHitboxLocation()
+    {
+        hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
+    }
+
 }
