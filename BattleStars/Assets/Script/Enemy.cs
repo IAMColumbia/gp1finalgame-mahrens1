@@ -10,8 +10,12 @@ public class Enemy : MonoBehaviour
 
     public void EnemyKilled()
     {
+        Player.Instance.money++;
+        Player.Instance.xp++;
+
         isDead = true;
-        gameObject.SetActive(false);
+        this.enabled = false;
+        this.gameObject.SetActive(false);
     }
 
     public virtual void ChangeHitboxLocation()

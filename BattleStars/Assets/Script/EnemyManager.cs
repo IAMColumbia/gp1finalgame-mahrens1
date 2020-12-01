@@ -17,16 +17,14 @@ public class EnemyManager : MonoBehaviour
     public void LoadEnemy()
     {
         enemy = enemyList[Random.Range(0, 3)];
-
         Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
     }
 
     private void Update()
     {
-        /*if (enemy.activeInHierarchy == false)
+        if(enemy == null)
         {
-            Destroy(enemy);
             LoadEnemy();
-        }*/
+        }
     }
 }

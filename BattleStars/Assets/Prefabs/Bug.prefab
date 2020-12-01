@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   health: 0
+  hitBox1: {fileID: 9103638707518910911}
 --- !u!1 &6666608400838662368
 GameObject:
   m_ObjectHideFlags: 0

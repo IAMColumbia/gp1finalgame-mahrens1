@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class Bug : Enemy
 {
 
-    private Button hitBox1;
+    public Button hitBox1;
 
     private void Awake()
     {
         isDead = false;
-        hitBox1 = GetComponent<Button>();
+        hitBox1 = (Button)FindObjectOfType(typeof(Button));
         health = 50;
     }
 

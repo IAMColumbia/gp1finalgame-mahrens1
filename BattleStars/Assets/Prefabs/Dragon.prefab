@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  health: 10
-  isClicked: 0
+  health: 0
+  hitBox1: {fileID: 8958529464219709887}
 --- !u!1 &8958529464219709885
 GameObject:
   m_ObjectHideFlags: 0

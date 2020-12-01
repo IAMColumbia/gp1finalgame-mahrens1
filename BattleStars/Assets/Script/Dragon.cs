@@ -11,7 +11,7 @@ public class Dragon : Enemy
     private void Awake()
     {
         isDead = false;
-        hitBox1 = GetComponentInChildren<Button>();
+        hitBox1 = (Button)FindObjectOfType(typeof(Button));
         health = 50;
     }
 
