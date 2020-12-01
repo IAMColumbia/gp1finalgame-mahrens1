@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
         isDead = true;
         this.enabled = false;
-        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
 
     public virtual void ChangeHitboxLocation()

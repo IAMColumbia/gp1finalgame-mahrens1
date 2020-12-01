@@ -16,12 +16,15 @@ public class EnemyManager : MonoBehaviour
 
     public void LoadEnemy()
     {
-        enemy = enemyList[Random.Range(0, 3)];
+        enemy = new GameObject();
+        enemy = (enemyList[Random.Range(0, 3)]);
         Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
     }
 
     private void Update()
     {
+        Debug.Log(enemy.ToString());
+
         if(enemy == null)
         {
             LoadEnemy();
