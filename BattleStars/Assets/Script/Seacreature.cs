@@ -20,6 +20,9 @@ public class Seacreature : Enemy
         if (health <= 0)
         {
             EnemyKilled();
+            EnemyManager.Instance.OnEmyDeath();
+            StartCoroutine(Wait(0.5f));
+            Destroy(gameObject);
         }
     }
 
@@ -29,7 +32,7 @@ public class Seacreature : Enemy
         ChangeHitboxLocation();
     }
 
-    public override void ChangeHitboxLocation()
+    public void ChangeHitboxLocation()
     {
         hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
     }

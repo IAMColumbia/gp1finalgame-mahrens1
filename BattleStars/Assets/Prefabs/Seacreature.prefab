@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4144446810623832918}
-  - component: {fileID: 5695468398088214289}
+  - component: {fileID: 2627117199388003478}
   m_Layer: 5
   m_Name: Seacreature
   m_TagString: Enemy
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: -4.8, y: 4.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5695468398088214289
+--- !u!114 &2627117199388003478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,11 +47,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677691822980255014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32d8a1fb1bb1cf4c82e03b02e449473, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fa71baeadf58b54bbbf274d9c5b1e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  health: 30
+  health: 40
   xpDrop: 2
   moneyDrop: 2
   hitBox1: {fileID: 7293994519562808411}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5695468398088214289}
+      - m_Target: {fileID: 2627117199388003478}
         m_MethodName: Hit
         m_Mode: 1
         m_Arguments:

@@ -4,30 +4,61 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    static EnemyManager _instance;
+    public static EnemyManager Instance
+    {
+        get { return _instance; }
+    }
+
     [SerializeField] List<GameObject> enemyList;
     private Vector2 spawnLocation;
     private GameObject enemy;
-    private Enemy enemyMob;
+
+    int spawnCount;
+    int currentCount;
+
+    public int CurrentEnemyCount
+    {
+        get { return currentCount; }
+        set
+        {
+            currentCount = value;
+            if(currentCount <= 0)
+            {
+                CreateEnemy();
+            }
+        }
+    }
+
+    void CreateEnemy()
+    {
+        enemy = enemyList[Random.Range(0, 3)];
+        Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
+        currentCount++;
+    }
 
     private void Start()
     {
-        spawnLocation = new Vector2(500, 400);        
-        LoadEnemy();
+        _instance = this;
+        spawnLocation = new Vector2(500, 400);       
+        CreateEnemy();
     }
 
-    public void LoadEnemy()
+    public void OnEmyDeath()
     {
-        enemy = (enemyList[Random.Range(0, 3)]);
-        Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
-        enemyMob = enemy.GetComponent<Enemy>();
+        currentCount--;
     }
 
-    private void Update()
+    public void HideEnemy()
     {
-        if(enemyMob.isDead == true)
+        if(enemy.activeInHierarchy == true)
         {
-            Debug.Log("Dead");
-            LoadEnemy();
+            enemy.SetActive(false);
+        }
+        else
+        {
+            enemy.SetActive(true);
         }
     }
+
 }
