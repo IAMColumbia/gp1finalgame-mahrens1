@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] List<GameObject> enemyList;
     private Vector2 spawnLocation;
     private GameObject enemy;
+    private Enemy enemyMob;
 
     private void Start()
     {
@@ -16,17 +17,16 @@ public class EnemyManager : MonoBehaviour
 
     public void LoadEnemy()
     {
-        enemy = new GameObject();
         enemy = (enemyList[Random.Range(0, 3)]);
         Instantiate(enemy, spawnLocation, Quaternion.identity, this.transform);
+        enemyMob = enemy.GetComponent<Enemy>();
     }
 
     private void Update()
     {
-        Debug.Log(enemy.ToString());
-
-        if(enemy == null)
+        if(enemyMob.isDead == true)
         {
+            Debug.Log("Dead");
             LoadEnemy();
         }
     }

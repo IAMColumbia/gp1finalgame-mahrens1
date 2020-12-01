@@ -25,7 +25,7 @@ public class Bug : Enemy
 
     public void Hit()
     {
-        health -= Player.Instance.weapon.damage;
+        health -= Player.Instance.damage;
         ChangeHitboxLocation();
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,22 +22,30 @@ public class Player : MonoBehaviour
 
     public Weapon weapon;
 
-    public int money;
+    public int damage;
 
-    public int xp;
+    public float money;
+    public float moneyModifier;
+
+    public float xp;
+    public float xpModifier;
 
     public void Start()
     {
-        xp = 0;
-        money = 0;
+        xp = 100;
+        xpModifier = 1;
+        money = 100;
+        moneyModifier = 1;
 
-        moneyText.text = "$ " + money.ToString();
-        xpText.text = "XP: " + xp.ToString();
+        damage = weapon.damage;
+
+        moneyText.text = "$ " + Math.Round(money).ToString();
+        xpText.text = "XP: " + Math.Round(xp).ToString();
     }
 
     public void Update()
     {
-        moneyText.text = "$ " + money.ToString();
-        xpText.text = "XP: " + xp.ToString();
+        moneyText.text = "$ " + Math.Round(money).ToString();
+        xpText.text = "XP: " + Math.Round(xp).ToString();
     }
 }
