@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249309884672613923}
-  - component: {fileID: 324302966473869275}
+  - component: {fileID: 474397200802121134}
   m_Layer: 5
   m_Name: Bug
   m_TagString: Enemy
@@ -116,7 +116,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &324302966473869275
+--- !u!114 &474397200802121134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,13 +125,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4428885909100520020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f693189968852ea4b891b7b68677df29, type: 3}
+  m_Script: {fileID: 11500000, guid: b32d8a1fb1bb1cf4c82e03b02e449473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
   health: 30
-  xpDrop: 2
-  moneyDrop: 2
+  xpDrop: 10
+  moneyDrop: 10
   hitBox1: {fileID: 9103638707518910911}
 --- !u!1 &6666608400838662368
 GameObject:
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 324302966473869275}
+      - m_Target: {fileID: 474397200802121134}
         m_MethodName: Hit
         m_Mode: 1
         m_Arguments:
