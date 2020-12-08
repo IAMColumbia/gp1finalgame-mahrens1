@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Dragon : Enemy
 {
 
-    public Button hitBox1;
+    //public Button hitBox1;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class Dragon : Enemy
             Destroy(gameObject);
         }
     }
-
+    /*
     public void Hit()
     {
         health -= Player.Instance.damage;
@@ -36,4 +36,5 @@ public class Dragon : Enemy
     {
         hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
     }
+    */
 }
