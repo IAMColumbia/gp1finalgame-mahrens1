@@ -12,19 +12,16 @@ public class UpgradeManager : MonoBehaviour
 
     public void DamageUpgrade()
     {
-        Debug.Log("Clicked");
-        DamageUp.PurchasedUpgrade(Player.Instance.xp, Player.Instance.damage);   
+        DamageUp.PurchasedDamageUpgrade(DamageUp.cost, DamageUp.bonus);   
     }
 
     public void MoneyUpgrade()
     {
-        Debug.Log("Clicked");
-        DamageUp.PurchasedUpgrade(Player.Instance.xp, Player.Instance.moneyModifier);
+        DamageUp.PurchasedMoneyUpgrade(MoneyUp.cost, MoneyUp.bonus);
     }
 
     public void XpUpgrade()
     {
-        Debug.Log("Clicked");
-        DamageUp.PurchasedUpgrade(Player.Instance.xp, Player.Instance.xpModifier);
+        DamageUp.PurchasedXpUpgrade(XpUp.cost, XpUp.bonus);
     }
 }

@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     public Weapon weapon;
 
-    public int damage;
+    public float damage;
 
     public float money;
     public float moneyModifier;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public bool isDead;
-    public int health;
+    public float health;
     public int xpDrop;
     public int moneyDrop;
 
@@ -44,6 +44,15 @@ public class Enemy : MonoBehaviour
     public void ResetEnemy()
     {
         health = 50;
+
+        if(this.health <= Player.Instance.damage)
+        {
+            this.health = Player.Instance.damage * 2.5f;
+        }
+        else
+        {
+            this.health = 50;
+        }
         xpDrop = 10;
         moneyDrop = 10;
         isDead = false;
@@ -64,11 +73,6 @@ public class Enemy : MonoBehaviour
     public void ChangeHitboxLocation()
     {
         hitBox1.transform.position = new Vector2(Random.Range(400, 600), Random.Range(300, 500));
-    }
-
-    public void SetUpEnemy()
-    {
-        Instantiate(this.gameObject, new Vector2(500, 400), Quaternion.identity, this.transform);
     }
 
 }
