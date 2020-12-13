@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         money = 100;
         moneyModifier = 1;
 
-        damage = weapon.damage;
+        damage = 10;
 
         moneyText.text = "$ " + Math.Round(money).ToString();
         xpText.text = "XP: " + Math.Round(xp).ToString();
@@ -47,5 +47,10 @@ public class Player : MonoBehaviour
     {
         moneyText.text = "$ " + Math.Round(money).ToString();
         xpText.text = "XP: " + Math.Round(xp).ToString();
+    }
+
+    public void UpdatePlayerDamage(Weapon pw, Weapon nw)
+    {
+        damage = Math.Abs(pw.damage - nw.damage);
     }
 }

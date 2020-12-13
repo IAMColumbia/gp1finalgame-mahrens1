@@ -1,0 +1,47 @@
+Battle Stars
+
+Battle Stars is a classic clicker game where you fight monsters to earn money and xp. 
+Money can be used to buy new weapons and certain upgrades. Xp is mainly used for certain upgrades. 
+Monster will change when while you fight them and it is important to hit their weak points to do damage.
+
+Credits:
+Mitchell Ahrens 
+	- Assets
+	- Art
+	- Programming
+
+Genre:
+Clicker
+
+============================================================
+
+Developer Log:
+
+Player Script
+--------------
+The player script uses the singleton design pattern to make it accessable
+to all other scripts. This creates the problem that it can be changed anywhere
+which makes keeping track of its problems more difficult.
+
+Enemy Script
+--------------
+The enemy script controls everything that an enemy can do. In order for the enemy to change and reset 
+I had to move it out of an enemy manager script and into one class. This is not good SoC.
+
+============================================================
+
+Postmortem:
+
+If I could start over I would try and fix the SoC problems that I have.
+I would want to keep things neat and only changing what they should be changing.
+The code itself isn't that reusable since everything was designed specifically for unity.
+So if I were to change the engine, then I would need to start from scratch and redo everything.
+My code is some what maintainable. You can add more enemies since the Enemy script only changes 
+the sprite. Weapons and other upgrades can be added since you just need to make another button to the weapon and
+upgrade tabs. 
+
+I didn't quite get to where I wanted to with the game. I wish there were more features that I could add
+like weapons that change the hit box movement radius. There was actually the idea for abilities, but 
+with the time I had left, that feature needed to be cut. The plan with abilities was to give the player 
+a one hit attack for a small durration. Then the hitbox will have a smaller radius for a short time. With other
+abilities. 

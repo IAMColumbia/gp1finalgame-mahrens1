@@ -15,7 +15,7 @@ public class EnemySpawner : Spawner
             gs.health = 50;
             gs.xpDrop = 10;
             gs.moneyDrop = 10;
-            gs.SetUpEnemy();
+
 
         }
     }
