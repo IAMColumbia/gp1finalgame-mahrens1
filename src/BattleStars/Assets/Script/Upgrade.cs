@@ -16,6 +16,5 @@ public class Upgrade : MonoBehaviour
 
             stat += this.bonus;
         }
-
     }
 }

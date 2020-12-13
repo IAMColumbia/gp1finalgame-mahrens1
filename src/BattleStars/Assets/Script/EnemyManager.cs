@@ -49,16 +49,4 @@ public class EnemyManager : MonoBehaviour
         currentCount--;
     }
 
-    public void HideEnemy()
-    {
-        if(enemy.activeInHierarchy == true)
-        {
-            enemy.SetActive(false);
-        }
-        else
-        {
-            enemy.SetActive(true);
-        }
-    }
-
 }

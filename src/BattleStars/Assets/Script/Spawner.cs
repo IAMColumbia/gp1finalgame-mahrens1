@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviour, IUnitySpawner
 {
+    public bool SpawnerEnabled { get; set; }
+
     public GameObject SpawnObject;
     public bool Enabled = true;
 
@@ -45,14 +47,19 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    protected virtual void addGameObject(GameObject spawn)
+    public virtual void addGameObject(GameObject spawn)
     {
         gameObjects.Add(spawn);
     }
 
-    protected virtual void setupSpawnObject(GameObject go)
+    protected virtual void SetupSpawnObject(GameObject go)
     {
         //Nothing todo should override with specific type
+    }
+
+    public void setupSpawnObject(GameObject go)
+    {
+
     }
 
 }

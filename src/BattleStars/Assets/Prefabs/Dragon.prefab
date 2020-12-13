@@ -207,6 +207,11 @@ MonoBehaviour:
   xpDrop: 10
   moneyDrop: 10
   hitBox1: {fileID: 8958529464219709887}
+  enemysprites:
+  - {fileID: 21300000, guid: e4d746c0ba438d248bca85a6e49322b7, type: 3}
+  - {fileID: 21300000, guid: 518d00f236463ef4ba517b21d41d5d29, type: 3}
+  - {fileID: 21300000, guid: 4a55f2c8c4e4a464e974247dd6783e57, type: 3}
+  enemyImage: {fileID: 8958529462817587478}
 --- !u!1 &8958529464219709885
 GameObject:
   m_ObjectHideFlags: 0

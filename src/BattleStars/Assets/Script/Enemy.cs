@@ -12,20 +12,25 @@ public class Enemy : MonoBehaviour
 
     public Button hitBox1;
 
+    public List<Sprite> enemysprites;
+    public Image enemyImage;
+
     private void Awake()
     {
         isDead = false;
         hitBox1 = (Button)FindObjectOfType(typeof(Button));
         health = 50;
     }
+
     private void Update()
     {
         if (health <= 0)
         {
             EnemyKilled();
-            EnemyManager.Instance.OnEmyDeath();
-            StartCoroutine(Wait(1f));
-            Destroy(gameObject);
+        }
+        if(isDead == true)
+        {
+            ResetEnemy();
         }
     }
 
@@ -33,6 +38,16 @@ public class Enemy : MonoBehaviour
     {
         Player.Instance.money += (moneyDrop * Player.Instance.moneyModifier);
         Player.Instance.xp += (xpDrop * Player.Instance.xpModifier);
+        isDead = true;
+    }
+
+    public void ResetEnemy()
+    {
+        health = 50;
+        xpDrop = 10;
+        moneyDrop = 10;
+        isDead = false;
+        enemyImage.sprite = enemysprites[Random.Range(0, 3)];
     }
 
     public IEnumerator Wait(float sec)
@@ -53,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     public void SetUpEnemy()
     {
-
+        Instantiate(this.gameObject, new Vector2(500, 400), Quaternion.identity, this.transform);
     }
 
 }

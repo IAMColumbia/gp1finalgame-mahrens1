@@ -6,16 +6,26 @@ public class EnemySpawner : Spawner
 {
     public GameObject enemy;
 
-    protected override void setupSpawnObject(GameObject go)
+    protected override void SetupSpawnObject(GameObject go)
     {
-        base.setupSpawnObject(go);
+        base.SetupSpawnObject(go);
         if (go.GetComponent<Enemy>() != null)
         {
             Enemy gs = go.GetComponent<Enemy>();
             gs.health = 50;
             gs.xpDrop = 10;
+            gs.moneyDrop = 10;
             gs.SetUpEnemy();
 
+        }
+    }
+
+    private void checkIfDead()
+    {
+        Enemy es = FindObjectOfType<Enemy>();
+        if (es == null)
+        {
+            Spawn();
         }
     }
 
@@ -23,6 +33,7 @@ public class EnemySpawner : Spawner
     {
         base.removeObjectInListToRemove();
         addDeadGhostsToRemoveList();
+        checkIfDead();
     }
 
     protected void addDeadGhostsToRemoveList()
@@ -42,5 +53,4 @@ public class EnemySpawner : Spawner
             }
         }
     }
-
 }
